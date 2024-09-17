@@ -1,0 +1,43 @@
+/* JavaScript Date objects represent a single moment in time in a 
+platform-independent format. Date objects encapsulate an integral number 
+that represents milliseconds since the midnight at the beginning of January 
+1, 1970, UTC (the epoch). */
+
+/* Note: TC39 is working on Temporal,
+ a new Date/Time API. Read more about it on the Igalia blog. 
+ It is not yet ready for production use! */
+
+ // In further future we will be able to use Temporal as we use Math as an API
+
+ let d = new Date();
+ console.log(d); // the output comes in non-readable format
+
+ //console.log(d.toString());
+ //console.log(d.toLocaleString());
+ //console.log(d.toDateString());
+ //console.log(typeof d); // the type of date is object, date is a object
+
+let myCreatedDate = new Date(2024, 0, 17) //month starts from 0 in javascript
+//console.log(myCreatedDate.toString());
+//console.log(myCreatedDate.toDateString());
+
+let myDate = new Date(2024, 0, 17, 5,3) 
+//console.log(myDate.toLocaleString());
+
+let myTimeStamp = Date.now()
+//console.log(myTimeStamp); // the output will be in milliseconds calculated from 1 jan,1970
+//console.log(myCreatedDate.getTime()); //could be used for comparison of the current time and the time on certain date
+
+//To convert the current date to seconds when it is in milliseconds
+console.log(Math.floor(Date.now/1000));
+
+// with this we get certain methods too such as getseconds(), getMinutes(), getDay() etc.
+// Note: Months starts from 0
+
+//String Interpolation means back tiks `${d.getDay()} and the time is ${d.getTime()}`
+
+// Also i can customize the toLocaleString which gives date in certain format.How?
+d.toLocaleString('default', {
+    weekday: "long",
+})
+ 
